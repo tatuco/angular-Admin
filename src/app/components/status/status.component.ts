@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-status',
@@ -8,7 +9,7 @@ import {AuthService} from '../../services/auth.service';
 })
 export class StatusComponent implements OnInit {
   isLoggedIn: Boolean = false;
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
     const token = localStorage.getItem('access_token');

@@ -17,19 +17,11 @@ export class LoginComponent {
       .then((user) => {
         localStorage.setItem('access_token', user.json().access_token);
         localStorage.setItem('status', user.json().status);
-        this.router.navigateByUrl('/status');
+        this.router.navigateByUrl('status');
       })
       .catch((err) => {
         console.log(err);
       });
-
-    this.auth.login(this.user)
-      .then((user) => {
-        console.log(user.json());
-      })
-      .catch((err) => {
-        console.log(err);
-    });
   }
 }
 /*const postData = {
